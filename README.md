@@ -24,3 +24,4 @@ PANTHEON
 -----------
 1. rackup config.ru  - запуск сервера
 2. shotgun config.ru - запуск сервера с автоперезагрузкой (при изменениях)
+3. rake db:migrate RACK_ENV='environment' - запуск миграций

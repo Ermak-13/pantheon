@@ -1,6 +1,6 @@
 require 'sinatra/base'
 
-require 'models'
+require 'models/init'
 
 
 module Website
