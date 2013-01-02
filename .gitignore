@@ -1,3 +1,4 @@
 *.sublime-project
 *.sublime-workspace
 *.db
+settings_local.rb

@@ -6,6 +6,10 @@ require 'models/init'
 
 module CMS
   class Application < Sinatra::Base
+    use Rack::Auth::Basic do |username, password|
+      username == HTTP_AUTH_USERNAME && password == HTTP_AUTH_PASSWORD
+    end
+
     get '/page/new' do
       %Q(
       <html>
