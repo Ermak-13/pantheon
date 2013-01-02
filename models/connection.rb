@@ -1,25 +1,30 @@
 require 'active_record'
 
+require 'settings'
+
+
 connection_settings = {}
 environment = ENV['RACK_ENV']
+
+database = File.join(PANTHEON_PATH, environment + '.db')
 
 case environment
 when 'development'
   connection_settings = {
     adapter: 'sqlite3',
-    database: '/home/ermak/' + environment + '.db'
+    database: database
   }
 
 when 'production'
   connection_settings = {
     adapter: 'sqlite3',
-    database: '/home/ermak/' + environment + '.db'
+    database: database
   }
 
 when 'test'
   connection_settings = {
     adapter: 'sqlite3',
-    database: '/home/ermak/' + environment + '.db'
+    database: database
   }
 
 end
