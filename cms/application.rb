@@ -6,9 +6,10 @@ require 'slim'
 
 require 'settings'
 require 'models/init'
+require 'lib/application'
 
 module CMS
-  class Application < Sinatra::Base
+  class Application < Pantheon::Application
     set :views, CMS_VIEWS_PATH
 
     use Rack::Auth::Basic do |username, password|
