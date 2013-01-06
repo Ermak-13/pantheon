@@ -1,4 +1,14 @@
 /*
- *= require_tree .
+ *= require lib/bootstrap/css/bootstrap
+ *= require lib/bootstrap/css/bootstrap-responsive
+
+ *= require ./common
+ *= require ./pages
+
  *= require_self
 */
+
+/* it is need for navbar-fixed-top (twitter-boostrap) */
+body {
+  padding-top: 40px;
+}

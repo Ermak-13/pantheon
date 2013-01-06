@@ -5,8 +5,14 @@ html
 
     link rel="stylesheet" href="/assets/cms/stylesheets/application.css"
     == yield_content :stylesheets
+
+    script type="text/javascript" src="/assets/cms/javascripts/application.js"
     == yield_content :javascripts
 
   body class="#{namespace(action_name ||= nil)}"
-    #main-container
+    == slim :header
+
+    #main-container.container
       == yield
+
+    == slim :footer
