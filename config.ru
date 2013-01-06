@@ -14,6 +14,7 @@ map ASSETS_MOUNTED_URL do
   environment = Sprockets::Environment.new
   environment.append_path CMS_ASSETS_PATH
   environment.append_path WEBSITE_ASSETS_PATH
+  environment.append_path LIB_ASSETS_PATH
 
   run environment
 end
