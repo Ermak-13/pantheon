@@ -1,0 +1,14 @@
+h1 New Page
+
+form action="/admin/page/create" method="post"
+  .input-field
+    label for="#page-url" url
+    input type="text" name="page[url]" id="page-url" value="#{@page.url}"
+  .input-field
+    label for="#page-content" content
+    textarea name="page[content]" id="page-content" = @page.content
+  .input-field
+    label for="#page-author" author
+    input type="text" name="page[author]" id="page-author" value="#{@page.author}"
+
+  input type="submit"

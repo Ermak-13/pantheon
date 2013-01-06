@@ -1,0 +1,12 @@
+doctype html
+html
+  head
+    title Welcom to CMS
+
+    link rel="stylesheet" href="/assets/cms/stylesheets/application.css"
+    == yield_content :stylesheets
+    == yield_content :javascripts
+
+  body class="#{namespace(action_name ||= nil)}"
+    #main-container
+      == yield
