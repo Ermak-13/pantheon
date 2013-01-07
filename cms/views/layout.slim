@@ -3,10 +3,10 @@ html
   head
     title Welcom to CMS
 
-    link rel="stylesheet" href="/assets/cms/stylesheets/application.css"
+    link rel="stylesheet" href="#{assets_url('/cms/stylesheets/application.css')}"
     == yield_content :stylesheets
 
-    script type="text/javascript" src="/assets/cms/javascripts/application.js"
+    script type="text/javascript" src="#{assets_url('/cms/javascripts/application.js')}"
     == yield_content :javascripts
 
   body class="#{namespace(action_name ||= nil)}"

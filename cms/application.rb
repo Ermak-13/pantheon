@@ -18,12 +18,12 @@ module CMS
 
     get '/page/new' do
       @page = Page.new
-      slim :new, locals: { action_name: 'new-page' }
+      slim %s{pages/new}, locals: { action_name: 'new-page' }
     end
 
     get '/page/edit/:id' do
       @page = Page.find params['id']
-      slim :edit, locals: { action_name: 'edit-page' }
+      slim %s{pages/edit}, locals: { action_name: 'edit-page' }
     end
 
     post '/page/create' do
@@ -45,6 +45,6 @@ module CMS
       end
     end
 
-    helpers Sinatra::ContentFor, ApplicationHelper
+    helpers Sinatra::ContentFor, Pantheon::ApplicationHelper, ApplicationHelper
   end
 end
