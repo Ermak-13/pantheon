@@ -11,4 +11,12 @@
 /* it is need for navbar-fixed-top (twitter-boostrap) */
 body {
   padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+/* override default settings of twitter-bootstrap */
+h1, h2, h3,
+h4, h5, h6 {
+  margin: 0px;
+  padding: 0px;
 }

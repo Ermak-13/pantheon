@@ -2,11 +2,15 @@ require 'rubygems'
 
 require 'sinatra/base'
 require 'sinatra/content_for'
+
+require 'active_support/all'
 require 'slim'
 
-require 'settings'
-require 'models/init'
 require 'lib/application'
+require 'lib/support/init'
+require 'models/init'
+require 'settings'
+
 
 module CMS
   class Application < Pantheon::Application
@@ -14,6 +18,11 @@ module CMS
 
     use Rack::Auth::Basic do |username, password|
       username == HTTP_AUTH_USERNAME && password == HTTP_AUTH_PASSWORD
+    end
+
+    get '/pages' do
+      @pages = Page.all
+      slim %s{pages/index}, locals: { action_name: 'index-page' }
     end
 
     get '/page/new' do

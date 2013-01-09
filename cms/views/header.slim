@@ -7,8 +7,9 @@
         span.icon-bar
         span.icon-bar
 
-      a.brand href="#{website_url("/")}" Pantheon
+      == link_to 'Pantheon', website_url('/'), class: 'brand'
 
       .nav-collapse.collapse
         ul.nav
-          li: a href="#" Pages
+          li == link_to 'Pages', cms_url('/pages')
+          li == link_to 'New Page', cms_url('/page/new')

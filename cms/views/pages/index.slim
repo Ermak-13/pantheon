@@ -1,0 +1,20 @@
+.row
+  .span10.offset1
+    h1 Pages
+
+    .row
+      .span5
+        - @pages.each do |page|
+          .pantheon-page
+            .block-header
+              h3.url == link_to page.url, website_url(page.url)
+
+            .block-content 
+              = page.content.truncate(length: 320)
+
+            .block-footer
+              == info_field 'Author', page.author
+              == info_field 'Updated at', page.updated_at.strftime("%d.%m.%Y")
+
+      .span5
+        div style="background: gray; height: 500px;"

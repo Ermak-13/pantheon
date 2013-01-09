@@ -1,3 +1,20 @@
+.cms-application.index-page {
+  .pantheon-page {
+    padding: 10px;
+
+    .block-header { margin-bottom: 5px; }
+    .block-footer { margin-top: 5px; }
+
+    .info-field.author,
+    .info-field.updated-at {
+      display: inline-block;
+      float: left;
+      margin-right: 10px;
+    }
+
+  }
+}
+
 .cms-application.new-page,
 .cms-application.edit-page {
   textarea {

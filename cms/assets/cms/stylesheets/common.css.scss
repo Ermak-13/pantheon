@@ -5,3 +5,10 @@ input, textarea {
 input[type="submit"] {
   width: auto;
 }
+
+.info-field {
+  .info-label {
+    font-weight: bold;
+    margin-right: 5px;
+  }
+}
