@@ -10,19 +10,19 @@ require 'website/application'
 require 'settings'
 
 
-map ASSETS_MOUNTED_URL do
+map Settings::ASSETS_MOUNTED_URL do
   environment = Sprockets::Environment.new
-  environment.append_path CMS_ASSETS_PATH
-  environment.append_path WEBSITE_ASSETS_PATH
-  environment.append_path LIB_ASSETS_PATH
+  environment.append_path Settings::CMS_ASSETS_PATH
+  environment.append_path Settings::WEBSITE_ASSETS_PATH
+  environment.append_path Settings::LIB_ASSETS_PATH
 
   run environment
 end
 
-map CMS_MOUNTED_URL do
+map Settings::CMS_MOUNTED_URL do
   run CMS::Application
 end
 
-map WEBSITE_MOUNTED_URL do
+map Settings::WEBSITE_MOUNTED_URL do
   run Website::Application
 end

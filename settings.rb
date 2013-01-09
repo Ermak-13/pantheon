@@ -7,22 +7,24 @@ rescue LoadError
 end
 
 
-PANTHEON_PATH = File.expand_path(File.dirname(__FILE__))
+module Settings
+  PANTHEON_PATH = File.expand_path(File.dirname(__FILE__))
 
-ASSETS_MOUNTED_URL ||= '/assets'
-CMS_MOUNTED_URL ||= '/admin'
-WEBSITE_MOUNTED_URL ||= '/'
+  ASSETS_MOUNTED_URL ||= '/assets'
+  CMS_MOUNTED_URL ||= '/admin'
+  WEBSITE_MOUNTED_URL ||= '/'
 
-CMS_PATH ||= File.join(PANTHEON_PATH, 'cms')
-WEBSITE_PATH ||= File.join(PANTHEON_PATH, 'website')
-LIB_PATH ||= File.join(PANTHEON_PATH, 'lib')
+  CMS_PATH ||= File.join(PANTHEON_PATH, 'cms')
+  WEBSITE_PATH ||= File.join(PANTHEON_PATH, 'website')
+  LIB_PATH ||= File.join(PANTHEON_PATH, 'lib')
 
-CMS_VIEWS_PATH ||= File.join(CMS_PATH, 'views')
-WEBSITE_VIEWS_PATH ||= File.join(WEBSITE_PATH, 'views')
+  CMS_VIEWS_PATH ||= File.join(CMS_PATH, 'views')
+  WEBSITE_VIEWS_PATH ||= File.join(WEBSITE_PATH, 'views')
 
-CMS_ASSETS_PATH ||= File.join(CMS_PATH, 'assets')
-WEBSITE_ASSETS_PATH ||= File.join(WEBSITE_PATH, 'assets')
-LIB_ASSETS_PATH ||= File.join(LIB_PATH, 'assets')
+  CMS_ASSETS_PATH ||= File.join(CMS_PATH, 'assets')
+  WEBSITE_ASSETS_PATH ||= File.join(WEBSITE_PATH, 'assets')
+  LIB_ASSETS_PATH ||= File.join(LIB_PATH, 'assets')
 
-HTTP_AUTH_USERNAME ||= 'admin'
-HTTP_AUTH_PASSWORD ||= 'admin'
+  HTTP_AUTH_USERNAME ||= 'admin'
+  HTTP_AUTH_PASSWORD ||= 'admin'
+end

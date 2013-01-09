@@ -11,18 +11,22 @@ module Pantheon
 
   module ApplicationHelper
     def cms_url(url)
-      "#{CMS_MOUNTED_URL}#{url}"
+      "#{Settings::CMS_MOUNTED_URL}#{url}"
     end
 
     def website_url(url)
       #excluding duplicate //
-      mounted_url = WEBSITE_MOUNTED_URL == '/' ? '' : WEBSITE_MOUNTED_URL
+      if Settings::WEBSITE_MOUNTED_URL == '/'
+        mounted_url = ''
+      else
+        mounted_url = Settings::WEBSITE_MOUNTED_URL
+      end
 
       "#{mounted_url}#{url}"
     end
 
     def assets_url(url)
-      "#{ASSETS_MOUNTED_URL}#{url}"
+      "#{Settings::ASSETS_MOUNTED_URL}#{url}"
     end
 
     def content_tag(tag, options = {}, &html_inner)

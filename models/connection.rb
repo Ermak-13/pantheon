@@ -8,7 +8,7 @@ require 'settings'
 connection_settings = {}
 environment = ENV['RACK_ENV']
 
-database = File.join(PANTHEON_PATH, environment + '.db')
+database = File.join(Settings::PANTHEON_PATH, environment + '.db')
 
 case environment
 when 'development'

@@ -14,10 +14,11 @@ require 'settings'
 
 module CMS
   class Application < Pantheon::Application
-    set :views, CMS_VIEWS_PATH
+    set :views, Settings::CMS_VIEWS_PATH
 
     use Rack::Auth::Basic do |username, password|
-      username == HTTP_AUTH_USERNAME && password == HTTP_AUTH_PASSWORD
+      username == Settings::HTTP_AUTH_USERNAME &&
+        password == Settings::HTTP_AUTH_PASSWORD
     end
 
     get '/pages' do
