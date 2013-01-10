@@ -10,6 +10,7 @@ gem 'sqlite3'
 gem 'sprockets'
 gem 'slim'
 gem 'nokogiri'
+gem 'sass'
 
 group :development do
   gem 'shotgun'
