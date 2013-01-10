@@ -1,6 +1,7 @@
 /*
  *= require lib/bootstrap/css/bootstrap
  *= require lib/bootstrap/css/bootstrap-responsive
+ *= require lib/stylesheets/common
 
  *= require ./common
  *= require ./pages
@@ -17,6 +18,6 @@ body {
 /* override default settings of twitter-bootstrap */
 h1, h2, h3,
 h4, h5, h6 {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
 }

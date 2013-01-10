@@ -7,14 +7,15 @@
         - @pages.each do |page|
           .pantheon-page
             .block-header
-              h3.url == link_to page.url, website_url(page.url)
+              h3.url == link_to page.title, website_url(page.url)
 
             .block-content 
-              = page.content.truncate(length: 320)
+              = page.description
 
             .block-footer
               == info_field 'Author', page.author
               == info_field 'Updated at', page.updated_at.strftime("%d.%m.%Y")
+              .clear-both
 
       .span5
         div style="background: gray; height: 500px;"

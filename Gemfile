@@ -9,6 +9,7 @@ gem 'sqlite3'
 
 gem 'sprockets'
 gem 'slim'
+gem 'nokogiri'
 
 group :development do
   gem 'shotgun'
