@@ -39,7 +39,7 @@ module CMS
     post '/page/create' do
       @page = Page.new params['page']
       @page.save
-      redirect to('/page/edit' + @page.id)
+      redirect to('/page/edit/' + @page.id.to_s)
     end
 
     post '/page/update/:id' do
