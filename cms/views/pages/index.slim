@@ -9,6 +9,12 @@
             .block-header
               h3.url == link_to page.title, website_url(page.url)
 
+              .btn-group.page-actions
+                == link_to 'edit', cms_url("/page/edit/#{page.id}"), 
+                  class: 'btn btn-mini btn-warning page-edit'
+                == link_to 'remove', cms_url("/page/remove/#{page.id}"), 
+                  class: 'btn btn-mini btn-danger page-remove'
+
             .block-content 
               = page.description
 

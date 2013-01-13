@@ -23,7 +23,7 @@ module CMS
 
     get '/pages' do
       @pages = Page.all
-      slim %s{pages/index}, locals: { action_name: 'index-page' }
+      render_index_page
     end
 
     get '/page/new' do
@@ -39,22 +39,32 @@ module CMS
     post '/page/create' do
       @page = Page.new params['page']
       if @page.save
-        redirect to('/page/edit/' + @page.id.to_s)
+        redirect to("/page/edit/#{@page.id}")
       else
         render_new_page
       end
     end
 
     post '/page/update/:id' do
-      @page = Page.find params['id'].to_i
+      @page = Page.find params['id']
       if @page.update_attributes params['page']
-        redirect to('/page/edit/' + @page.id.to_s)
+        redirect to("/page/edit/#{@page.id}")
       else
         render_edit_page
       end
     end
 
+    get '/page/remove/:id' do
+      @page = Page.find params[:id]
+      @page.destroy
+      redirect to('/pages')
+    end
+
     private
+      def render_index_page
+        slim %s{pages/index}, locals: { action_name: 'index-page' }
+      end
+
       def render_new_page
         slim %s{pages/new}, locals: { action_name: 'new-page' }
       end
