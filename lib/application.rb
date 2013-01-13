@@ -7,6 +7,18 @@ require 'settings'
 
 module Pantheon
   class Application < Sinatra::Base
+    protected
+      def render_index_page
+        slim %s{pages/index}, locals: { action_name: 'index-page' }
+      end
+
+      def render_new_page
+        slim %s{pages/new}, locals: { action_name: 'new-page' }
+      end
+
+      def render_edit_page
+        slim %s{pages/edit}, locals: { action_name: 'edit-page' }
+      end
   end
 
   module ApplicationHelper

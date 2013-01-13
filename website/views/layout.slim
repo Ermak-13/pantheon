@@ -1,0 +1,18 @@
+doctype html
+html
+  head
+    title Welcom to Website
+
+    link rel="stylesheet" href="#{assets_url('/website/stylesheets/application.css')}"
+    == yield_content :stylesheets
+
+    script type="text/javascript" src="#{assets_url('/website/javascripts/application.js')}"
+    == yield_content :javascripts
+
+  body class="#{namespace(action_name ||= nil)}"
+    == slim :header
+
+    #main-container.container
+      == yield
+
+    == slim :footer

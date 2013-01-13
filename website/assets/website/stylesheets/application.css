@@ -1,0 +1,7 @@
+/*
+ *= require lib/bootstrap/css/bootstrap
+ *= require lib/bootstrap/css/bootstrap-responsive
+ *= require lib/stylesheets/common
+
+ *= require_self
+*/

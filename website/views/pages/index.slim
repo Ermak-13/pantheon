@@ -1,0 +1,22 @@
+.row
+  .span10.offset1
+    h1 Pages
+
+    .row
+      .span5
+        - @pages.each do |page|
+          .pantheon-page
+            .block-header
+              h3.url == link_to page.title, website_url(page.url)
+
+            .block-content 
+              = page.description
+
+            .block-footer
+              == info_field 'Author', page.author
+              == info_field 'Updated at', page.updated_at.strftime("%d.%m.%Y")
+              .clear-both
+
+      .span5
+        h3 Ba-dum-tss
+        img src="#{assets_url('/website/images/phantomjs.png')}"
