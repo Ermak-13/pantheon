@@ -10,6 +10,11 @@ require 'website/application'
 require 'settings'
 
 
+# aliases for modules
+Settings = Pantheon::Settings
+CMS = Pantheon::CMS
+Website = Pantheon::Website
+
 map Settings::ASSETS_MOUNTED_URL do
   environment = Sprockets::Environment.new
   environment.append_path Settings::CMS_ASSETS_PATH
