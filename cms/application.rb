@@ -28,25 +28,40 @@ module CMS
 
     get '/page/new' do
       @page = Page.new
-      slim %s{pages/new}, locals: { action_name: 'new-page' }
+      render_new_page
     end
 
     get '/page/edit/:id' do
       @page = Page.find params['id']
-      slim %s{pages/edit}, locals: { action_name: 'edit-page' }
+      render_edit_page
     end
 
     post '/page/create' do
       @page = Page.new params['page']
-      @page.save
-      redirect to('/page/edit/' + @page.id.to_s)
+      if @page.save
+        redirect to('/page/edit/' + @page.id.to_s)
+      else
+        render_new_page
+      end
     end
 
     post '/page/update/:id' do
       @page = Page.find params['id'].to_i
-      @page.update_attributes params['page']
-      redirect to('/page/edit/' + @page.id.to_s)
+      if @page.update_attributes params['page']
+        redirect to('/page/edit/' + @page.id.to_s)
+      else
+        render_edit_page
+      end
     end
+
+    private
+      def render_new_page
+        slim %s{pages/new}, locals: { action_name: 'new-page' }
+      end
+
+      def render_edit_page
+        slim %s{pages/edit}, locals: { action_name: 'edit-page' }
+      end
 
 
     module ApplicationHelper

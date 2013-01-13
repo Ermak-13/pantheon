@@ -11,6 +11,10 @@ require 'lib/support/init'
 class Page < ActiveRecord::Base
   before_save :set_title, :set_description
 
+  validates :url, presence: true, uniqueness: true
+  validates :content, presence: true
+  validates :author, presence: true
+
   private
     def set_title()
       self.title = get_title if self.title.blank?
