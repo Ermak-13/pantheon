@@ -31,5 +31,9 @@ module Pantheon
     # ***** USERNAME & PASSWORD *****
     HTTP_AUTH_USERNAME ||= 'admin'
     HTTP_AUTH_PASSWORD ||= 'admin'
+
+    # ***** TITLE *****
+    CMS_TITLE ||= 'Welcom to CMS'
+    WEBSITE_TITLE ||= 'Welcom to Website'
   end
 end

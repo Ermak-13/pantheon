@@ -25,6 +25,12 @@ module Pantheon
         def namespace(action_name)
           action_name ? "website-application #{action_name}" : "website-application"
         end
+
+        def title
+          content_tag :title do
+            Settings::WEBSITE_TITLE
+          end
+        end
       end
 
       helpers Sinatra::ContentFor, Pantheon::ApplicationHelper, ApplicationHelper
