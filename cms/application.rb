@@ -22,9 +22,11 @@ module Pantheon
           password == Settings::HTTP_AUTH_PASSWORD
       end
 
-      get '/pages' do
-        @pages = Page.all
-        render_index_page
+      ['/', '/pages'].each do |url|
+        get url do
+          @pages = Page.all
+          render_index_page
+        end
       end
 
       get '/page/new' do

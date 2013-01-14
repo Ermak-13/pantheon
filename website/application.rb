@@ -11,9 +11,11 @@ module Pantheon
     class Application < Pantheon::Application
       set :views, Settings::WEBSITE_VIEWS_PATH
 
-      get '/' do
-        @pages = Page.all
-        render_index_page
+      ['/', '/pages'].each do |url|
+        get url do
+          @pages = Page.all
+          render_index_page
+        end
       end
 
       get '/:url' do
